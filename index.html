@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Operadores Lógicos</title>
+    </head>
+
+    <body>
+        <h1>Operadores Lógicos</h1>
+        <script>
+            let dados = {
+                limiteDeIdade: 18,
+                sexo: {
+                    homem: 'h',
+                    mulher: 'm'
+                },
+                preco: {
+                    homem: '50,00',
+                    mulher: '80,00'
+                },
+                verdadeiro: 's'
+            }
+            function main() {
+                let name_input = window.prompt(`Seja Bem vindo(a) ao Lab365, qual o seu nome?`)
+                let isStudent_input = window.prompt(`Olá ${name_input}! Você é estudante do Lab365? Digite s para sim, ou n para não.`);
+                if (isStudent_input != dados.verdadeiro) return window.alert('Você não pode entrar.');
+
+                let isAdult = window.prompt(`Você tem mais de ${dados.limiteDeIdade} anos? Digite s para sim e n para não`)
+                if (isAdult != dados.verdadeiro) return window.alert('Você não pode entrar.');
+
+                let sexo_input = window.prompt(`Se você é homem digite ${dados.sexo.homem}, se for mulher digite ${dados.sexo.mulher}.`);
+                switch (sexo_input) {
+                    case dados.sexo.mulher:
+                        window.alert(`Seja bem vinda aluna, a entrada feminina custa R$${dados.preco.mulher}`)
+                        break;
+                    case dados.sexo.homem:
+                        window.alert(`Seja bem vindo aluno, a entrada masculina custa R$${dados.preco.mulher}`)
+                        break;
+                    default:
+                        window.alert('Recarregue a página e tente novamente.')
+                        break;
+                }
+            }
+            main()
+        </script>
+    </body>
+
+</html>
